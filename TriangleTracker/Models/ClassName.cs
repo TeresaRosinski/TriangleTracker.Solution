@@ -15,7 +15,19 @@ namespace Triangle
       Side2 = side2;
       Side3 = side3;
     }
-  public bool EquilateralChecker(int side1, int side2, int side3)
+    public bool EquilateralChecker(int length1, int length2, int length3)
+    {
+      if (length1 == length2 && length1 == length3)
+      {
+        return true;
+      }
+      else
+      {
+        return false; 
+      }
+    }
+
+    public bool IsoscelesChecker(int length1, int length2, int length3)
     {
       return false; 
     }
