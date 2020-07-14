@@ -18,6 +18,12 @@ namespace TriangleTracker.Tests
       Triangle.TriangleKind practiceTri2 = new Triangle.TriangleKind(4, 4, 2);
       Assert.AreEqual(true, practiceTri2.IsoscelesChecker(4, 4, 2));
     }
+    [TestMethod]
+    public void Triangle_ShouldBeAScaleneTriangle_True()
+    {
+      Triangle.TriangleKind practiceTri3 = new Triangle.TriangleKind(2, 3, 4);
+      Assert.AreEqual(true, practiceTri3.ScaleneChecker(2, 3, 4));
+    }
   }
 }
   

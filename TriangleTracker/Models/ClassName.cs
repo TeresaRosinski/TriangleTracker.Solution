@@ -29,10 +29,21 @@ namespace Triangle
 
     public bool IsoscelesChecker(int length1, int length2, int length3)
     {
-      return false; 
+      if ((length1 == length2 && length1 != length3) || (length2 == length3 && length2 != length1) || (length3 == length1 && length2 != length3 ))
+    {
+      return true; 
     }
-}
+    else
+    {
+      return false;
+    }
+    }
 
+    public bool ScaleneChecker(int length1, int length2, int length3)
+    {
+      return false;
+    }
+  }
 
   public class Program
   {
