@@ -33,7 +33,6 @@ namespace Triangle
         return false; 
       }
     }
-
     public bool IsoscelesChecker()
     {
       if ((Side1 == Side2 && Side1 != Side3) || (Side2 == Side3 && Side2 != Side1) || (Side3 == Side1 && Side2 != Side3 ))
@@ -62,7 +61,7 @@ namespace Triangle
     {
       if (Side1 + Side2 < Side3 || Side2 + Side3 < Side1 || Side1 + Side3 < Side2)
     {
-      return true;
+      return false;
     }
     else
     {
