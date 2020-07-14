@@ -3,14 +3,15 @@ using TriangleTracker;
 
 namespace TriangleTracker.Tests
 {
-  // [TestClass]
-  // public class ClassNameTests
-  // {
-  //   [TestMethod]
-  //   public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
-  //   {
-  //     // any necessary logic to prep for test; instantiating new classes, etc.
-  //     Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
-  //   }// Test methods go here
-  // }
+  [TestClass]
+  public class TriangleKindTests
+  {
+    [TestMethod]
+    public void Triangle_SidesShouldBeEqual_True()
+    {
+      Triangle.TriangleKind practiceTri = new Triangle.TriangleKind(3, 3, 3);
+      Assert.AreEqual(true, practiceTri.EquilateralChecker(3, 3, 3));
+    }
+  }
 }
+  

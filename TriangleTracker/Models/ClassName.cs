@@ -3,10 +3,25 @@ using System.Collections.Generic;
 
 namespace Triangle
 {
-  public class TriangleKind
+  public class TriangleKind 
   {
-   
-  }
+    public int Side1;
+    public int Side2;
+    public int Side3;
+
+    public TriangleKind(int side1, int side2, int side3)
+    {
+      Side1 = side1;
+      Side2 = side2;
+      Side3 = side3;
+    }
+  public bool EquilateralChecker(int side1, int side2, int side3)
+    {
+      return false; 
+    }
+}
+
+
   public class Program
   {
     public static void Main()
@@ -22,19 +37,20 @@ namespace Triangle
       Console.WriteLine("Enter the length of the third side of your triangle: ");
       string userInput3 = Console.ReadLine();
       int length3 = int.Parse(userInput3);
+
+      TriangleKind thisTriangle = new TriangleKind(length1, length2, length3);
+
+    
     }
   }
 }
 
-    // if (this.side1 === this.side2 && this.side1 === this.side3)
-      // {
-      //   return "Equilateral Triangle";
-    //   }
-    //   else if (this.side1 === this.side2 || this.side1 === this.side3)
+  
+    //   else if (length1 === length2 || length1 === length3)
     //   {
     //     return "Isosceles Triangle";
     //   }
-    //   else if (this.side1 != this.side2 && this.side1 != this.side3 && this.side2 != this.side3)
+    //   else if (length1 != length2 && length1 != length3 && length2 != length3)
     //   {
     //     return "Scalene Triangle";
     //   }
