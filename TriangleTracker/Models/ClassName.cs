@@ -9,15 +9,22 @@ namespace Triangle
     public int Side2;
     public int Side3;
 
+    // public field: camelCase -- side1
+    // private field: underscore camelCase -- _side1
+    // property: PascalCase or UpperCamelCase -- Side1
+    // auto-implemented property: PascalCase or UpperCamelCase -- Side1
+    // Never use HungarianCase -- public int intSide1
+
     public TriangleKind(int side1, int side2, int side3)
     {
       Side1 = side1;
       Side2 = side2;
       Side3 = side3;
     }
-    public bool EquilateralChecker(int length1, int length2, int length3)
+
+    public bool EquilateralChecker()
     {
-      if (length1 == length2 && length1 == length3)
+      if (Side1 == Side2 && Side1 == Side3)
       {
         return true;
       }
@@ -27,9 +34,9 @@ namespace Triangle
       }
     }
 
-    public bool IsoscelesChecker(int length1, int length2, int length3)
+    public bool IsoscelesChecker()
     {
-      if ((length1 == length2 && length1 != length3) || (length2 == length3 && length2 != length1) || (length3 == length1 && length2 != length3 ))
+      if ((Side1 == Side2 && Side1 != Side3) || (Side2 == Side3 && Side2 != Side1) || (Side3 == Side1 && Side2 != Side3 ))
     {
       return true; 
     }
@@ -39,10 +46,29 @@ namespace Triangle
     }
     }
 
-    public bool ScaleneChecker(int length1, int length2, int length3)
+    public bool ScaleneChecker()
     {
-      return false;
+      if(Side1 != Side2 && Side2 !=Side3 && Side1 != Side3)
+      {
+        return true;
+      }
+      else  
+      {
+        return false;
+      }
     }
+
+    public bool ValidTriangle()
+    {
+      if (Side1 + Side2 < Side3 || Side2 + Side3 < Side1 || Side1 + Side3 < Side2)
+    {
+      return true;
+    }
+    else
+    {
+      return true; 
+    }
+  }
   }
 
   public class Program
@@ -62,7 +88,8 @@ namespace Triangle
       int length3 = int.Parse(userInput3);
 
       TriangleKind thisTriangle = new TriangleKind(length1, length2, length3);
-
+      //bool isEquailateral = thisTriangle.EquilateralChecker();
+      //Console.WriteLine(isEquailateral);
     
     }
   }
