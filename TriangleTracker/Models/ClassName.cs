@@ -68,7 +68,34 @@ namespace Triangle
       return true; 
     }
   }
-  }
+
+  public string CheckAllFunctions()
+  {
+    if (ValidTriangle() == false)
+    {
+      Console.WriteLine("Please enter a triangle");
+      //return false C;
+    } 
+      else if(EquilateralChecker())
+      {
+        Console.WriteLine("Equilateral");
+        // return true; 
+      }
+      else if(IsoscelesChecker())
+        {
+          Console.WriteLine("Isosceles");
+          // return true; 
+        }
+        else if(ScaleneChecker())
+          {
+            Console.WriteLine("Scalene");
+            //return true; 
+          }    
+      Console.WriteLine("Please enter a valid triangle");
+      //return false; 
+    }
+    
+  } 
 
   public class Program
   {
@@ -93,18 +120,3 @@ namespace Triangle
     }
   }
 }
-
-  
-    //   else if (length1 === length2 || length1 === length3)
-    //   {
-    //     return "Isosceles Triangle";
-    //   }
-    //   else if (length1 != length2 && length1 != length3 && length2 != length3)
-    //   {
-    //     return "Scalene Triangle";
-    //   }
-    //   else
-    //   {
-    //     return "Not triangle";
-    //   }
-    // 

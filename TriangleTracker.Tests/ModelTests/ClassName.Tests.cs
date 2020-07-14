@@ -31,6 +31,13 @@ namespace TriangleTracker.Tests
       Triangle.TriangleKind practiceTri4 = new Triangle.TriangleKind(4, 5, 20);
       Assert.AreEqual(false, practiceTri4.ValidTriangle());
     }
+    
+    [TestMethod]
+    public void Triangle_ShouldCheckFunctions_True()
+    {
+      Triangle.TriangleKind practiceTri5 = new Triangle.TriangleKind(5, 5, 5);
+      Assert.AreEqual("Equilateral", practiceTri5.CheckAllFunctions());
+    }
   }
 }
   
