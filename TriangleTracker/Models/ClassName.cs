@@ -73,26 +73,21 @@ namespace Triangle
   {
     if (ValidTriangle() == false)
     {
-      Console.WriteLine("Please enter a triangle");
-      //return false C;
+      throw new Exception("Invalid Triangle");
     } 
       else if(EquilateralChecker())
       {
-        Console.WriteLine("Equilateral");
-        // return true; 
+        return "Equilateral";
       }
       else if(IsoscelesChecker())
         {
-          Console.WriteLine("Isosceles");
-          // return true; 
+          return "Isosceles"; 
         }
         else if(ScaleneChecker())
           {
-            Console.WriteLine("Scalene");
-            //return true; 
+            return "Scalene"; 
           }    
-      Console.WriteLine("Please enter a valid triangle");
-      //return false; 
+      return "You have a crazy triangle";
     }
     
   } 
@@ -114,8 +109,8 @@ namespace Triangle
       int length3 = int.Parse(userInput3);
 
       TriangleKind thisTriangle = new TriangleKind(length1, length2, length3);
-      //bool isEquailateral = thisTriangle.EquilateralChecker();
-      //Console.WriteLine(isEquailateral);
+      string triangleType = thisTriangle.CheckAllFunctions();
+      Console.WriteLine(triangleType);
     
     }
   }
